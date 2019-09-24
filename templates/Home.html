@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type='text/javascript'>
+        function addFields()
+        {
+            // Number of inputs to create
+            var search = document.getElementById("drop").value;
+            var insertdata=document.getElementById("Insertdata");
+      
+            while (insertdata.hasChildNodes()) {
+                insertdata.removeChild(insertdata.lastChild);
+            } 
+           	
+                insertdata.appendChild(document.createTextNode("Write "+search+" of book\n"));
+                // Create an <input> element, set its type and name attributes
+                var input = document.createElement("input");
+                input.type = "text";
+                input.name = "searchkeyword";
+                insertdata.appendChild(input);
+               
+		}
+            </script>
+            
+</head>
+
+
+<body>
+        <h2>welcome {{ username }}</h2>
+        Search book:
+        <form action="{{url_for('ShowRating')}}" method='POST'>
+            <select name="books" id="drop" onchange="addFields()">
+              <option value="none">None</option>
+              <option value="title">Title</option>
+              <option value="author">Author</option>
+              <option value="year">Year</option>
+            </select>
+            <br><br>
+            <div id="Insertdata">
+            </div> 
+            <br>
+            <input type="submit">
+          </form>
+          
+    
+</body>
+</html>

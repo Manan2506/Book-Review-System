@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>REGISTRATION FORM</h2>
+
+<form action="{{url_for('Login')}}" method='POST'>
+  Username:<br>
+  <input type="text" name="username" required >
+  <br>
+  Full name:<br>
+  <input type="text" name="fullname" required>
+  <br>
+  password:<br>
+  <input type="password" name="psw" required>
+  <br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called Login.</p>
+
+</body>
+</html>
